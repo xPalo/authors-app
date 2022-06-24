@@ -1,0 +1,39 @@
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold"><%= author.first_name %> <%= author.last_name %></h1>
+    <p class="card-text">
+      <strong>Country:</strong>
+      <%= author.country %>
+    </p>
+
+    <p class="card-text">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Author</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @author.books.each do |book| %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.isbn %></td>
+          <td><%= book.author.first_name + ' ' + book.author.last_name %></td>
+          <td><%= link_to "Show", book %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    </p>
+    <div class="d-flex justify-content-start">
+      <%= link_to "Edit", edit_author_path(@author), class:"btn btn-dark btn-lg me-3 text-white" %>
+      <%= link_to "Add Book", new_book_path(:new_book_author_id => "#{@author.id}"), class:"btn btn-success btn-lg me-3" %>
+      <%= link_to "Back", authors_path, class:"btn btn-primary btn-lg me-3" %>
+      <%= button_to "Delete", @author, method: :delete, class:"btn btn-danger btn-lg me-3" %>
+    </div>
+  </div>
+</div>
