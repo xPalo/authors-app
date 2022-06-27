@@ -11,7 +11,7 @@
     </thead>
     <tbody>
     <% @books.each do |book| %>
-      <% if current_user == book.author.user %>
+      <% if current_user == book&.author&.user %>
         <tr>
           <td><%= link_to "#{book.title}", book %></td>
           <td><%= book.isbn %></td>
