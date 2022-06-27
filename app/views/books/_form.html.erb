@@ -28,7 +28,7 @@
 
       <div>
         <%= form.label :author_id %>
-        <%= form.select :author_id, options_for_select(Author.all.map{|a| ["#{a.first_name} #{a.last_name}", a.id]}),{}, {class: 'form-select mb-3'} %>
+        <%= form.select :author_id, options_for_select(@current_authors_options.map{|a| ["#{a.first_name} #{a.last_name}", a.id]}),{}, {class: 'form-select mb-3'} %>
       </div>
 
       <div>

@@ -14,6 +14,7 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    @current_authors_options = Author.where("user_id = ?", current_user.id)
   end
 
   # GET /books/1/edit
