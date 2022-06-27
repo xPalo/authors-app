@@ -21,13 +21,18 @@
     <%= form.text_field :isbn %>
   </div>
 
-  <div class="form-group mb-3">
-    <% if params[:new_book_author_id] %>
-      <%= form.number_field :author_id, id: :book_author_id, type: :hidden, class:"form-control", value: params[:new_book_author_id] %>
-    <% else %>
-      <%= form.number_field :author_id, id: :book_author_id, type: :hidden, class:"form-control" %>
-    <% end %>
+  <div>
+    <%= form.label :author_id, style: "display: block" %>
+    <%= form.select :author_id, options_for_select(Author.all.map{|a| ["#{a.first_name} #{a.last_name}", a.id]}), class:"form-select" %>
   </div>
+
+<!--  <div class="form-group mb-3">-->
+    <%# if params[:new_book_author_id] %>
+      <%#= form.number_field :author_id, id: :book_author_id, type: :hidden, class:"form-control", value: params[:new_book_author_id] %>
+    <%# else %>
+      <%#= form.number_field :author_id, id: :book_author_id, type: :hidden, class:"form-control" %>
+    <%# end %>
+<!--  </div>-->
 
   <p class="text-dark">AUTHOR: <%= @author.inspect %></p>
   <p class="text-dark">ID: <%= params[:new_book_author_id] %></p>
