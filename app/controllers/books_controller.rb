@@ -19,6 +19,7 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
+    @current_authors_options = Author.where("user_id = ?", current_user.id)
   end
 
   # POST /books or /books.json
