@@ -1,24 +1,13 @@
-# README
+# [authors-app](https://rails-authors-app.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Easily track books you read through Authors App. After signing up, you can add new books, link them to its authors and keep track of how many books you read.
 
 Things you may want to cover:
 
-* Ruby version
+* Creating authors
 
-* System dependencies
+* Creating author's books
 
-* Configuration
+* Keeping notes 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+App is also deployed on [Heroku](https://rails-authors-app.herokuapp.com/).
