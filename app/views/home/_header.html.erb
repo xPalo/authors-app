@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark navbar-expand-sm bg-dark">
   <div class="container-fluid">
-    <%= link_to 'Authors App', root_path, class:"navbar-brand h1 my-auto" %>
+    <%= link_to 'Authors App', root_path, class:"navbar-brand h1 my-auto fw-bold" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,27 +13,27 @@
 
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to 'Authors', authors_path, class:"nav-link" %>
+            <%= link_to 'Authors', authors_path, class:"nav-link fw-lighter" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'New Author', new_author_path, class:"nav-link" %>
+            <%= link_to 'New Author', new_author_path, class:"nav-link fw-lighter" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Books', books_path, class:"nav-link" %>
+            <%= link_to 'Books', books_path, class:"nav-link fw-lighter" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'New Book', new_book_path, class:"nav-link" %>
+            <%= link_to 'New Book', new_book_path, class:"nav-link fw-lighter" %>
           </li>
         <% end %>
       </ul>
       <div class="d-flex" role="search">
         <% if user_signed_in? %>
-            <h5 class="text-white my-auto"><%= current_user.email %></h5>
-            <%= link_to 'Edit profile', edit_user_registration_path, class:"nav-link btn btn-outline-warning text-warning ms-2" %>
-            <%= button_to 'Log out', destroy_user_session_path, method: :delete, class:"nav-link btn btn-outline-danger text-danger ms-2" %>
+            <h5 class="text-white my-auto fw-light me-2 fs-5"><%= current_user.email %></h5>
+            <%= link_to 'Edit profile', edit_user_registration_path, class:"nav-link btn btn-sm btn-outline-warning text-warning ms-2" %>
+            <%= button_to 'Log out', destroy_user_session_path, method: :delete, class:"nav-link btn btn-sm btn-outline-danger text-danger ms-2" %>
         <% else %>
-            <%= link_to 'Sign up', new_user_registration_path, class:"nav-link btn btn-outline-light text-light ms-2" %>
-            <%= link_to 'Log in', new_user_session_path, class:"nav-link btn btn-outline-success text-success ms-2" %>
+            <%= link_to 'Sign up', new_user_registration_path, class:"nav-link btn btn-sm btn-outline-light text-light ms-2" %>
+            <%= link_to 'Log in', new_user_session_path, class:"nav-link btn btn-sm btn-outline-success text-success ms-2" %>
         <% end %>
       </div>
     </div>

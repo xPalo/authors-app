@@ -13,7 +13,7 @@
     <div class="d-flex">
       <%= link_to "Edit", edit_book_path(@book), class:"btn btn-dark me-3" %>
       <%= link_to "Back to books", books_path, class:"btn btn-primary me-3" %>
-      <%= button_to "Delete", @book, method: :delete, class:"btn btn-danger me-3" %>
+      <%= button_to "Delete", @book, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class:"btn btn-danger me-3" %>
     </div>
   </div>
 </div>
