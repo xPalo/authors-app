@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: %i[ show edit update destroy ]
-  #before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /authors or /authors.json
