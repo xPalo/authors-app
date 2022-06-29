@@ -61,10 +61,9 @@ class BooksController < ApplicationController
   end
 
   def correct_user
-    #@author = current_user.authors.find_by(id: params[:id])
-    @books = Book.all
-    @book = @books.find(params[:id])
-    redirect_to authors_path, notice: "Not authorized to manipulate" if @book.nil?
+    @book = Book.find_by_id(params[:id])
+    @author = current_user.authors.find_by(id: @book.author_id)
+    redirect_to authors_path, notice: "Not authorized to manipulate" if @book.nil? || @author.nil?
   end
 
   private

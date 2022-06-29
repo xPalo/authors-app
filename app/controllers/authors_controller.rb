@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:show]
+  #before_action :authenticate_user!, except: [:show]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /authors or /authors.json
@@ -65,7 +65,7 @@ class AuthorsController < ApplicationController
 
   def correct_user
     @author = current_user.authors.find_by(id: params[:id])
-    redirect_to authors_path, notice: "Not authorized to manipulate" if @author.nil?
+    redirect_to books_path, notice: "Not authorized to manipulate" if @author.nil?
   end
 
   private
