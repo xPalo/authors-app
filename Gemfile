@@ -17,6 +17,10 @@ gem "devise", "~> 4.8", ">= 4.8.1"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "rspec-rails", "~> 6.0.0.rc1"
+  gem "factory_bot"
+  gem "faker"
+  gem "shoulda-matchers"
 end
 
 group :development do
