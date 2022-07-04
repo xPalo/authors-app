@@ -10,13 +10,10 @@ class AuthorsController < ApplicationController
 
   # GET /authors/1 or /authors/1.json
   def show
-    # @current_author_id = @author.id
-    # puts("\n \nCURRENT AUTHOR ID: " + @current_author_id.to_s + "\n \n")
   end
 
   # GET /authors/new
   def new
-    # @author = Author.new
     @author = current_user.authors.build
   end
 
