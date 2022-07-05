@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe AuthorsController, type: :controller do
+RSpec.describe BooksController, type: :controller do
   let!(:user) { FactoryBot.create(:user) }
   let!(:author) { FactoryBot.create(:author, user_id: user.id )}
   let!(:book) { FactoryBot.create(:book, author_id: author.id )}
