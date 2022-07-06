@@ -1,0 +1,38 @@
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold"><%= user.first_name %> <%= user.last_name %></h1>
+    <p class="card-text">
+      <strong><%= user.email %></strong>
+    </p>
+
+    <p class="card-text">
+    <% if user.authors.length != 0 %>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Author</th>
+          <th scope="col">Books read</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+        <tbody>
+          <% user.authors.each do |a| %>
+            <tr>
+              <td><%= a.first_name %> <%= a.last_name %></td>
+              <td><%= a.books.length %></td>
+              <td><%= link_to "Show", a %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+    <% end %>
+
+    </p>
+<!--    <div class="d-flex justify-content-start">-->
+      <%#= link_to "Edit", edit_author_path(@author), class:"btn btn-dark btn-lg me-3 text-white" %>
+      <%#= link_to "Add Book", new_book_path(:new_book_author_id => "#{@author.id}"), class:"btn btn-success btn-lg me-3" %>
+      <%#= link_to "Back", authors_path, class:"btn btn-primary btn-lg me-3" %>
+      <%#= button_to "Delete", @author, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class:"btn btn-danger btn-lg me-3" %>
+<!--    </div>-->
+  </div>
+</div>

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :books
-  devise_for :users
+  # devise_for :users
+  devise_for :users, controllers: { sessions: "devise/sessions" }
+  resources :users, :except => [:edit, :update, :destroy]
   resources :authors
-  root 'home#index'
-  get 'home/about'
+  resources :books
+  root "home#index"
+  get "home/about"
 end
