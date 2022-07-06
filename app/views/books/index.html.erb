@@ -1,22 +1,24 @@
 <h1 class="text-center">Books</h1>
 
-<div id="authors" class="text-center mx-auto w-75">
+<div id="authors" class="text-center mx-auto w-100">
   <% if @books.length > 0 %>
-    <table class="table table-hover">
+    <table class="table table-hover table-dark table-striped">
       <thead>
       <tr>
         <th scope="col">Title</th>
         <th scope="col">ISBN</th>
         <th scope="col">Author</th>
+        <th scope="col">Action</th>
       </tr>
       </thead>
       <tbody>
       <% @books.each do |book| %>
         <% if current_user == book&.author&.user %>
           <tr>
-            <td><%= link_to "#{book.title}", book %></td>
+            <td><%= link_to "#{book.title}", book, class:"text-light text-decoration-none" %></td>
             <td><%= book.isbn %></td>
-            <td><%= link_to "#{book.author.first_name} #{book.author.last_name}", book.author %></td>
+            <td><%= link_to "#{book.author.first_name} #{book.author.last_name}", book.author, class:"text-light"  %></td>
+            <td><%= link_to "Show", book %></td>
           </tr>
         <% end %>
       <% end %>
@@ -26,8 +28,8 @@
   <% end %>
   <%#= "AUTHOR_IDS: #{@author_ids}" %>
   <%= page_entries_info @books %>
-  <%= paginate @books %>
+  <%= paginate @books, theme: 'bootstrap-5', pagination_class: "my-3 pagination-sm flex-wrap justify-content-center" %>
   <div class="d-flex justify-content-start">
-    <%= link_to "New book", new_book_path, class:"btn btn-primary" %>
+    <%= link_to "New book", new_book_path, class:"btn btn-outline-primary" %>
   </div>
 </div>

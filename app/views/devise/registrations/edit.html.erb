@@ -1,6 +1,6 @@
 <h1 class="text-center">Edit <%= resource_name.to_s.humanize %></h1>
 
-<div class="form-signin my-4 mx-auto w-50">
+<div class="form-signin my-4 mx-auto w-100">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 

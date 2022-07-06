@@ -15,6 +15,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "devise", "~> 4.8", ">= 4.8.1"
 gem "kaminari"
+gem "bootstrap5-kaminari-views"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

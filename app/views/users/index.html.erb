@@ -1,7 +1,7 @@
 <h1 class="text-center my-4">Authors-App Users</h1>
 
-<div id="authors" class="text-center mx-auto w-75">
-  <table class="table table-hover">
+<div id="authors" class="text-center mx-auto w-100">
+  <table class="table table-hover table-dark table-striped">
         <thead>
             <tr>
               <th scope="col">First Name</th>
@@ -30,7 +30,7 @@
         </tbody>
   </table>
     <%= page_entries_info @users %>
-    <%= paginate @users %>
+    <%= paginate @users, theme: 'bootstrap-5', pagination_class: "my-3 pagination-sm flex-wrap justify-content-center" %>
 <!--  <div class="d-flex justify-content-start">-->
     <%#= link_to "New author", new_author_path, class:"btn btn-primary" %>
 <!--  </div>-->
