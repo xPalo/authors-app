@@ -22,7 +22,9 @@
             <% end %>
           <% end %>
         </tbody>
-    </table>
+  </table>
+    <%= page_entries_info @authors %>
+    <%= paginate @authors %>
   <div class="d-flex justify-content-start">
     <%= link_to "New author", new_author_path, class:"btn btn-primary" %>
   </div>

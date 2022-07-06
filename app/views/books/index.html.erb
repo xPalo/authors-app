@@ -21,6 +21,9 @@
     <% end %>
     </tbody>
   </table>
+  <%#= "AUTHOR_IDS: #{@author_ids}" %>
+  <%= page_entries_info @books %>
+  <%= paginate @books %>
   <div class="d-flex justify-content-start">
     <%= link_to "New book", new_book_path, class:"btn btn-primary" %>
   </div>

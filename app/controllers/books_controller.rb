@@ -5,7 +5,17 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
-    @books = Book.all
+
+    # @books = []
+    # @authors = current_user.authors
+    # @authors.each { |author|
+    #   @books.push(author.books)
+    # }
+    #
+    # @books.page(params[:page])
+
+    @author_ids = current_user.authors.collect(&:id)
+    @books = Book.where(author_id: @author_ids).page(params[:page])
   end
 
   # GET /books/1 or /books/1.json
