@@ -7,7 +7,7 @@
 
     <p class="card-text">
     <% if user.authors.length != 0 %>
-    <table class="table table-hover table-dark text-center">
+    <table class="table table-hover table-active text-light text-center">
       <thead>
         <tr>
           <th scope="col">Author</th>
@@ -17,10 +17,10 @@
       </thead>
         <tbody>
           <% user.authors.each do |a| %>
-            <tr>
+            <tr class="text-light">
               <td><%= a.first_name %> <%= a.last_name %></td>
               <td><%= a.books.length %></td>
-              <td><%= link_to "Show", a %></td>
+              <td><%= link_to "Show", a, class:"text-info" %></td>
             </tr>
           <% end %>
         </tbody>

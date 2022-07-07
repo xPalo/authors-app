@@ -1,6 +1,6 @@
 <h1 class="text-center">Log in</h1>
 
-<div class="form-signin my-4 mx-auto w-50">
+<div class="form-signin my-4 mx-auto w-75">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group mb-3">
       <%= f.label :email %><br />
@@ -12,13 +12,15 @@
       <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
     </div>
 
-    <div class="my-3">
+    <div class="my-3 text-white">
       <%= "Don't have an account yet?" %>
-      <%= render "devise/shared/links" %>
+      <div class="my-3 text-white fw-bold">
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
 
     <div class="actions">
-      <%= f.submit "Log in", class:"btn btn-lg btn-primary my-auto" %>
+      <%= f.submit "Log in", class:"btn btn-lg btn-light my-auto" %>
     </div>
   <% end %>
 </div>

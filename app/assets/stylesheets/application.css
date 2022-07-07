@@ -70,11 +70,7 @@ body {
 }
 
 .info {
-    color: #17a2b8 !important;
-    border-bottom-color: #17a2b8 !important;
-}
-.info:hover {
-    border-bottom-color: rgb(23, 162, 184, .25)
+    border-bottom-color: #0dcaf0 !important;
 }
 
 .bd-placeholder-img {

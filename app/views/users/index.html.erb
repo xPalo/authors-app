@@ -1,7 +1,7 @@
 <h1 class="text-center my-4">Authors-App Users</h1>
 
-<div id="authors" class="text-center mx-auto w-100">
-  <table class="table table-hover table-dark table-striped">
+<div id="users" class="text-center mx-auto w-100">
+  <table class="table table-hover table-active text-light">
         <thead>
             <tr>
               <th scope="col">First Name</th>
@@ -13,7 +13,7 @@
         </thead>
         <tbody>
           <% @users.each do |user| %>
-              <tr>
+              <tr class="text-light">
                 <td><%= user.first_name %></td>
                 <td><%= user.last_name %></td>
                 <td><%= user.email %></td>
@@ -24,14 +24,12 @@
                   }
                 %>
                 <td><%= books_count %></td>
-                <td><%= link_to "Show", user %></td>
+                <td><%= link_to "Show", user, class:"text-info" %></td>
               </tr>
           <% end %>
         </tbody>
   </table>
     <%= page_entries_info @users %>
     <%= paginate @users, theme: 'bootstrap-5', pagination_class: "my-3 pagination-sm flex-wrap justify-content-center" %>
-<!--  <div class="d-flex justify-content-start">-->
-    <%#= link_to "New author", new_author_path, class:"btn btn-primary" %>
-<!--  </div>-->
+
 </div>
