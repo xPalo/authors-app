@@ -39,10 +39,6 @@ body {
     border-bottom-color: rgba(255, 255, 255, .25);
 }
 
-/*.nav-masthead .nav-link + .nav-link {*/
-/*    margin-left: 1rem;*/
-/*}*/
-
 .nav-masthead .active {
     color: #fff;
     border-bottom-color: #fff;
@@ -54,11 +50,11 @@ body {
 }
 
 .warning:hover {
-    border-bottom-color: rgb(255, 193, 7, .25)
+    border-bottom-color: rgba(255, 193, 7, .25);
 }
 
 .danger:hover {
-    border-bottom-color: rgb(220, 53, 69, .25)
+    border-bottom-color: rgba(220, 53, 69, .25);
 }
 
 .success {
@@ -66,7 +62,7 @@ body {
     border-bottom-color: #28a745 !important;
 }
 .success:hover {
-    border-bottom-color: rgb(40, 167, 69, .25)
+    border-bottom-color: rgba(40, 167, 69, .25);
 }
 
 .info {
