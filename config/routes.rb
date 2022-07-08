@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :books
   root "home#index"
   get "home/about"
+  get "auth/twitter/callback", to: "omniauth_callbacks#twitter"
 end

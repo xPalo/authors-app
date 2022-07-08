@@ -29,11 +29,15 @@
     </table>
     </p>
     <br>
+    <% if @author.user == current_user %>
     <div class="d-flex justify-content-center">
       <%= link_to "Edit", edit_author_path(@author), class:"btn btn-light me-3" %>
       <%= link_to "Add Book", new_book_path(:new_book_author_id => "#{@author.id}"), class:"btn btn-dark me-3" %>
       <%= link_to "Back", authors_path, class:"btn btn-info me-3" %>
       <%= button_to "Delete", @author, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class:"btn btn-danger me-3" %>
     </div>
+      <% else %>
+
+      <% end %>
   </div>
 </div>

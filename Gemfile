@@ -28,6 +28,9 @@ end
 group :development do
   gem "web-console"
   gem "letter_opener"
+
+  gem "omniauth-twitter"
+  gem "omniauth-rails_csrf_protection"
 end
 
 group :production do

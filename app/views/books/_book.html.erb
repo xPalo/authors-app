@@ -7,7 +7,11 @@
     </p>
     <p class="card-text">
       <strong>Author:</strong>
-      <%= link_to "#{book.author.first_name} #{book.author.last_name}", book.author, class:"text-light" %>
+      <%= link_to "#{book.author.first_name} #{book.author.last_name}", book.author.user, class:"text-light" %>
+    </p>
+    <p class="card-text">
+      <strong>Review by:</strong>
+      <%= link_to "#{book.author.user.first_name} #{book.author.user.last_name}", book.author.user, class:"text-light" %>
     </p>
 
     <% if book.notes %>
