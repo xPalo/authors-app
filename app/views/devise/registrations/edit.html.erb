@@ -45,9 +45,13 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Update", class:"btn btn-lg btn-light my-auto" %>
-      <%= link_to "Back", :back, class:"btn btn-lg btn-dark my-auto" %>
-      <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-lg btn-danger my-auto" %>
+      <%= f.submit "Update", class:"btn btn-lg btn-light my-4" %>
     </div>
   <% end %>
+
+  <div class="d-flex justify-content-center">
+    <%= link_to "Back", :back, class:"btn btn-dark my-auto mx-2" %>
+    <%= button_to "Delete", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-danger my-auto mx-2" %>
+  </div>
+
 </div>

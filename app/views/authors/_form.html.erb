@@ -2,15 +2,15 @@
   <%= form_with(model: author) do |form| %>
 
     <% if author.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(author.errors.count, "error") %> prohibited this author from being saved:</h2>
-
-        <ul>
-          <% author.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>
+            <% author.errors.each do |error| %>
+              <%= error.full_message %>
+              <br>
+            <% end %>
+          </strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     <% end %>
 
     <div class="form-group mb-3">
@@ -32,6 +32,6 @@
       <%= form.number_field :user_id, id: :author_user_id, type: :hidden, class:"form-control", value: current_user.id %>
     </div>
 
-    <%= form.submit class:"btn btn-lg btn-primary my-auto"%>
+    <%= form.submit class:"btn btn-lg btn-light my-auto"%>
   <% end %>
 </div>
